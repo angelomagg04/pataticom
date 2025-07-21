@@ -1,0 +1,30 @@
+@import url('https://fonts.cdnfonts.com/css/minecraft-4');
+
+.pixeltext {
+  font-family: 'Minecraft', sans-serif;
+}
+
+.avatar{
+  height: 7em;
+  position: relative;
+  left: -5px;
+}
+
+.avcard {
+  width: 100%;
+  height: auto;
+  box-shadow: 5px 4px 3px rgb(204, 204, 204);
+  transition: transform 0.2s cubic-bezier(0.4,0,0.2,1), background-color 0.2s, box-shadow 0.2s cubic-bezier(0.4,0,0.2,1);
+}
+
+.avcard:hover{
+  transform: translate(-4px, -3px);
+  box-shadow: 9px 7px 3px rgb(204, 204, 204);
+  background-color: lightblue;
+}
+
+.cntr{
+  margin: 5% auto;
+  width: 500px;
+  height: auto;
+}
