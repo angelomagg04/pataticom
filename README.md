@@ -1,3 +1,3 @@
 # pataticom
 the game of the bros <br>
-<p> angelomagg04.github.io/pataticom/ </p>
+<p> https://angelomagg04.github.io/pataticom/ </p>
