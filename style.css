@@ -37,3 +37,55 @@
     padding: 0 2vw;
   }
 }
+
+.holder{
+  position: absolute;
+  height: 10em;
+  opacity: 80%;
+  top: 0px;
+  left: 0px;
+}
+
+.points{
+  position:absolute;
+  left: 110px;
+  top: 37px;
+  font-size: 8mm;
+}
+
+.nametag{
+  position:absolute;
+  left: 110px;
+  top: 77px;
+  font-size: 9mm;
+}
+
+.sfida{
+  margin-top: 5em;
+  font-size: 7mm;
+}
+
+.cornice{
+  width:100%;
+}
+
+.cornice-wrapper {
+  width: fit-content;
+  position: relative;
+}
+
+.testo-cornice {
+  color: #4f4f4f; /* Cambia colore se serve */
+  font-size: 1.3em;
+  position: absolute;
+  top: 50px;
+  left: 5px;
+}
+
+.bonus{
+  color: green;
+}
+
+.malus{
+  color: red;
+}
