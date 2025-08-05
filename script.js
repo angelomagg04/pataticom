@@ -35,9 +35,9 @@ const malus = [
 const data = {
     ang:   { img: "avatars/avatar.png", nome: "ang", pt: 0, sfideCompletate: [6] },
     bisi:  { img: "avatars/bisi.png", nome: "bisi", pt: 0, sfideCompletate: [] },
-    gab:   { img: "avatars/gab.png", nome: "gab", pt: 0, sfideCompletate: [] },
-    zacca: { img: "avatars/zacca.png", nome: "zacca", pt: 0, sfideCompletate: [6] },
-    mamu:  { img: "avatars/mamu.png", nome: "mamu", pt: 0, sfideCompletate: [] },
+    gab:   { img: "avatars/gab.png", nome: "gab", pt: 0, sfideCompletate: [6] },
+    zacca: { img: "avatars/zacca.png", nome: "zacca", pt: 0, sfideCompletate: [6,1] },
+    mamu:  { img: "avatars/mamu.png", nome: "mamu", pt: 0, sfideCompletate: [1] },
     tolo: { img: "avatars/tolo.png", nome: "tolo", pt: 0, sfideCompletate: [] },
 };
 
