@@ -125,3 +125,38 @@ if (window.innerWidth >= 992) {
   // Ad esempio, reindirizza a una pagina desktop
   window.location.href = "desktop.html";
 }
+
+// Mostra classifica se presente il div #classifica
+window.addEventListener('DOMContentLoaded', function() {
+  const classificaDiv = document.getElementById("classifica");
+  if (classificaDiv) {
+    // Calcola il punteggio di ogni utente dalle sfide completate
+    const tutteLeSfide = [...bonus, ...malus];
+    const classificaArr = Object.values(data).map(u => {
+        let pt = 0;
+        (u.sfideCompletate || []).forEach(id => {
+            const sfida = tutteLeSfide.find(item => item.id === id);
+            if (sfida) pt += sfida.punteggio;
+        });
+        return {
+            nome: u.nome,
+            img: u.img,
+            pt
+        };
+    });
+    // Ordina per punteggio decrescente
+    classificaArr.sort((a, b) => b.pt - a.pt);
+    // Crea HTML stilato
+    let html = '<ul class="list-group" style="padding:0;list-style:none;">';
+    classificaArr.forEach((u, i) => {
+        html += `<li class="list-group-item d-flex align-items-center" style="display:flex;align-items:center;padding:0.7em 0.5em;border-bottom:1px solid #eee;">
+            <span style="font-size:1.3em;width:2em;text-align:center;font-weight:bold;color:#007bff;">${i+1}</span>
+            <img src="${u.img}" alt="${u.nome}" style="height:2.5em;width:2.5em;object-fit:cover;border-radius:50%;margin-right:1em;border:2px solid #ddd;">
+            <span style="font-weight:600;font-size:1.1em;color:#333;flex:1;">${u.nome}</span>
+            <span style="font-size:1.1em;font-weight:bold;color:#28a745;">${u.pt} pt</span>
+        </li>`;
+    });
+    html += '</ul>';
+    classificaDiv.innerHTML = html;
+  }
+});

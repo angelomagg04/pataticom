@@ -61,7 +61,7 @@
 }
 
 .sfida{
-  margin-top: 5em;
+  margin-top: 1em;
   font-size: 7mm;
 }
 
@@ -88,4 +88,8 @@
 
 .malus{
   color: red;
+}
+
+.leadbtn{
+  margin-top: 9em;
 }
