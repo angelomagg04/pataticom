@@ -93,3 +93,12 @@
 .leadbtn{
   margin-top: 9em;
 }
+
+.lead-title {
+  font-size: 3rem; /* molto grande */
+  font-weight: bold;
+  background: linear-gradient(90deg, #c20000, #ff6a00, #c20000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

@@ -1,43 +1,55 @@
+// Funzione globale per aggiornare i punteggi di tutti i personaggi
+window.aggiornaPunteggi = function() {
+    const tutteLeSfide = [...bonus, ...malus];
+    Object.values(data).forEach(personaggio => {
+        let punteggioTotale = 0;
+        (personaggio.sfideCompletate || []).forEach(id => {
+            const sfida = tutteLeSfide.find(item => item.id === id);
+            if (sfida) punteggioTotale += sfida.punteggio;
+        });
+        personaggio.pt = punteggioTotale;
+    });
+};
 
 //bonus e malus
 const bonus = [
-  { id: 0, sfida: "Guardare l'alba dopo aver fatto una serata", punteggio: 5 },
-  { id: 1, sfida: "Fare il bagno di notte", punteggio: 20 },
-  { id: 2, sfida: "Avvistare una stella cadente", punteggio: 10 },
-  { id: 3, sfida: "Lasciarsi con la propria ragazza", punteggio: 200 },
-  { id: 4, sfida: "Farsi dare l'instagram da una tipa", punteggio: 20 },  
-  { id: 5, sfida: "Farsi una foto con una celebrita'", punteggio: 50 },
-  { id: 6, sfida: "Mangiare un kebab alle 3 di notte", punteggio: 20 },
-  { id: 7, sfida: "Fare un aperitivo in spiaggia", punteggio: 10 },
-  { id: 8, sfida: "Buttarsi in mare vestiti", punteggio: 30 },
-  { id: 9, sfida: "Farsi un tatuaggio", punteggio: 50 },
-  { id: 10, sfida: "Fare 3 after di fila", punteggio: 100 },
-  { id: 11, sfida: "Fare/partecipare a un video virale sui social", punteggio: 50 }
+    { id: 0, sfida: "Guardare l'alba dopo aver fatto una serata", punteggio: 5 },
+    { id: 1, sfida: "Fare il bagno di notte", punteggio: 20 },
+    { id: 2, sfida: "Avvistare una stella cadente", punteggio: 10 },
+    { id: 3, sfida: "Lasciarsi con la propria ragazza", punteggio: 200 },
+    { id: 4, sfida: "Farsi dare l'instagram da una tipa", punteggio: 20 },
+    { id: 5, sfida: "Farsi una foto con una celebrita'", punteggio: 50 },
+    { id: 6, sfida: "Mangiare un kebab alle 3 di notte", punteggio: 20 },
+    { id: 7, sfida: "Fare un aperitivo in spiaggia", punteggio: 10 },
+    { id: 8, sfida: "Buttarsi in mare vestiti", punteggio: 30 },
+    { id: 9, sfida: "Farsi un tatuaggio", punteggio: 50 },
+    { id: 10, sfida: "Fare 3 after di fila", punteggio: 100 },
+    { id: 11, sfida: "Fare/partecipare a un video virale sui social", punteggio: 50 }
 ];
 
 const malus = [
-  { id: 12, sfida: "Scottarsi al sole", punteggio: -30 },
-  { id: 13, sfida: "Fidanzarsi", punteggio: -50 },
-  { id: 14, sfida: "Ricevere un palo da una ragazza", punteggio: -40 },
-  { id: 15, sfida: "Non fare after e addormentarsi", punteggio: -30 },
-  { id: 16, sfida: "Essere cacciati dai buttafuori", punteggio: -30 },
-  { id: 17, sfida: "Rimanere senza voce", punteggio: -40 },
-  { id: 18, sfida: "Puntura di medusa", punteggio: -15 },
-  { id: 19, sfida: "Pallonata in faccia", punteggio: -15 },
-  { id: 20, sfida: "Perdere l'aereo/treno", punteggio: -50 },
-  { id: 21, sfida: "Smarrire la valigia", punteggio: -40 },
-  { id: 22, sfida: "Perdere i documenti", punteggio: -100 },
-  { id: 23, sfida: "Perdere il telefono", punteggio: -80 },
-  { id: 24, sfida: "Ammalarsi", punteggio: -100 }
+    { id: 12, sfida: "Scottarsi al sole", punteggio: -30 },
+    { id: 13, sfida: "Fidanzarsi", punteggio: -50 },
+    { id: 14, sfida: "Ricevere un palo da una ragazza", punteggio: -40 },
+    { id: 15, sfida: "Non fare after e addormentarsi", punteggio: -30 },
+    { id: 16, sfida: "Essere cacciati dai buttafuori", punteggio: -30 },
+    { id: 17, sfida: "Rimanere senza voce", punteggio: -40 },
+    { id: 18, sfida: "Puntura di medusa", punteggio: -15 },
+    { id: 19, sfida: "Pallonata in faccia", punteggio: -15 },
+    { id: 20, sfida: "Perdere l'aereo/treno", punteggio: -50 },
+    { id: 21, sfida: "Smarrire la valigia", punteggio: -40 },
+    { id: 22, sfida: "Perdere i documenti", punteggio: -100 },
+    { id: 23, sfida: "Perdere il telefono", punteggio: -80 },
+    { id: 24, sfida: "Ammalarsi", punteggio: -100 }
 ];
 
 // Dati dei personaggi
 const data = {
-    ang:   { img: "avatars/avatar.png", nome: "ang", pt: 0, sfideCompletate: [6] },
-    bisi:  { img: "avatars/bisi.png", nome: "bisi", pt: 0, sfideCompletate: [] },
-    gab:   { img: "avatars/gab.png", nome: "gab", pt: 0, sfideCompletate: [6] },
-    zacca: { img: "avatars/zacca.png", nome: "zacca", pt: 0, sfideCompletate: [6,1] },
-    mamu:  { img: "avatars/mamu.png", nome: "mamu", pt: 0, sfideCompletate: [1] },
+    ang: { img: "avatars/avatar.png", nome: "ang", pt: 0, sfideCompletate: [6,0,1] },
+    bisi: { img: "avatars/bisi.png", nome: "bisi", pt: 0, sfideCompletate: [1] },
+    gab: { img: "avatars/gab.png", nome: "gab", pt: 0, sfideCompletate: [6,0,1] },
+    zacca: { img: "avatars/zacca.png", nome: "zacca", pt: 0, sfideCompletate: [6,1,0] },
+    mamu: { img: "avatars/mamu.png", nome: "mamu", pt: 0, sfideCompletate: [1] },
     tolo: { img: "avatars/tolo.png", nome: "tolo", pt: 0, sfideCompletate: [] },
 };
 
@@ -59,6 +71,7 @@ if (data[nome]) {
         const sfida = tutteLeSfide.find(item => item.id === id);
         if (sfida) punteggioTotale += sfida.punteggio;
     });
+    data[nome].pt = punteggioTotale; // aggiorna il dato pt
     document.getElementById("points").textContent = "pt: " + punteggioTotale;
 
     // Mostra elenco di tutte le sfide (bonus e malus), con check a sinistra se completate
@@ -77,7 +90,7 @@ if (data[nome]) {
         check.style.display = "inline-block";
         check.style.textAlign = "center";
         check.style.fontWeight = "bold";
-        check.style.margin= "4px";
+        check.style.margin = "4px";
         if (completate.includes(item.id)) {
             check.textContent = "✅";
         } else {
@@ -88,7 +101,7 @@ if (data[nome]) {
         // Testo sfida
         const testo = document.createElement("span");
         testo.textContent = item.sfida + " ";
-        testo.style.color= "#4f4f4f";
+        testo.style.color = "#4f4f4f";
         li.appendChild(testo);
 
         // Punteggio
@@ -122,41 +135,7 @@ if (data[nome]) {
 }
 
 if (window.innerWidth >= 992) {
-  // Ad esempio, reindirizza a una pagina desktop
-  window.location.href = "desktop.html";
+    // Ad esempio, reindirizza a una pagina desktop
+    window.location.href = "desktop.html";
 }
 
-// Mostra classifica se presente il div #classifica
-window.addEventListener('DOMContentLoaded', function() {
-  const classificaDiv = document.getElementById("classifica");
-  if (classificaDiv) {
-    // Calcola il punteggio di ogni utente dalle sfide completate
-    const tutteLeSfide = [...bonus, ...malus];
-    const classificaArr = Object.values(data).map(u => {
-        let pt = 0;
-        (u.sfideCompletate || []).forEach(id => {
-            const sfida = tutteLeSfide.find(item => item.id === id);
-            if (sfida) pt += sfida.punteggio;
-        });
-        return {
-            nome: u.nome,
-            img: u.img,
-            pt
-        };
-    });
-    // Ordina per punteggio decrescente
-    classificaArr.sort((a, b) => b.pt - a.pt);
-    // Crea HTML stilato
-    let html = '<ul class="list-group" style="padding:0;list-style:none;">';
-    classificaArr.forEach((u, i) => {
-        html += `<li class="list-group-item d-flex align-items-center" style="display:flex;align-items:center;padding:0.7em 0.5em;border-bottom:1px solid #eee;">
-            <span style="font-size:1.3em;width:2em;text-align:center;font-weight:bold;color:#007bff;">${i+1}</span>
-            <img src="${u.img}" alt="${u.nome}" style="height:2.5em;width:2.5em;object-fit:cover;border-radius:50%;margin-right:1em;border:2px solid #ddd;">
-            <span style="font-weight:600;font-size:1.1em;color:#333;flex:1;">${u.nome}</span>
-            <span style="font-size:1.1em;font-weight:bold;color:#28a745;">${u.pt} pt</span>
-        </li>`;
-    });
-    html += '</ul>';
-    classificaDiv.innerHTML = html;
-  }
-});
