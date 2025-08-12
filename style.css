@@ -4,7 +4,7 @@
   font-family: 'Minecraft', sans-serif;
 }
 
-.avatar{
+.avatar {
   height: 7em;
   position: relative;
   left: -5px;
@@ -14,16 +14,16 @@
   width: 100%;
   height: auto;
   box-shadow: 5px 4px 3px rgb(204, 204, 204);
-  transition: transform 0.2s cubic-bezier(0.4,0,0.2,1), background-color 0.2s, box-shadow 0.2s cubic-bezier(0.4,0,0.2,1);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s, box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.avcard:hover{
+.avcard:hover {
   transform: translate(-4px, -3px);
   box-shadow: 9px 7px 3px rgb(204, 204, 204);
   background-color: lightblue;
 }
 
-.cntr{
+.cntr {
   margin: 5% auto;
   max-width: 500px;
   width: 100%;
@@ -38,7 +38,7 @@
   }
 }
 
-.holder{
+.holder {
   position: absolute;
   height: 10em;
   opacity: 80%;
@@ -46,27 +46,27 @@
   left: 0px;
 }
 
-.points{
-  position:absolute;
+.points {
+  position: absolute;
   left: 110px;
   top: 37px;
   font-size: 8mm;
 }
 
-.nametag{
-  position:absolute;
+.nametag {
+  position: absolute;
   left: 110px;
   top: 77px;
   font-size: 9mm;
 }
 
-.sfida{
+.sfida {
   margin-top: 1em;
   font-size: 7mm;
 }
 
-.cornice{
-  width:100%;
+.cornice {
+  width: 100%;
 }
 
 .cornice-wrapper {
@@ -75,30 +75,67 @@
 }
 
 .testo-cornice {
-  color: #4f4f4f; /* Cambia colore se serve */
+  color: #4f4f4f;
+  /* Cambia colore se serve */
   font-size: 1.3em;
   position: absolute;
   top: 50px;
   left: 5px;
 }
 
-.bonus{
+.bonus {
   color: green;
 }
 
-.malus{
+.malus {
   color: red;
 }
 
-.leadbtn{
+.leadbtn {
   margin-top: 9em;
 }
 
 .lead-title {
-  font-size: 3rem; /* molto grande */
+  font-size: 3rem;
+  /* molto grande */
   font-weight: bold;
   background: linear-gradient(90deg, #c20000, #ff6a00, #c20000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+#chat {
+  list-style: none;
+  padding: 10px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+#chat li {
+  background: white;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#form {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  padding: 10px;
+}
+
+#input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  margin-left: 5px;
 }

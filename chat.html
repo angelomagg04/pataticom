@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chat Anonima</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="p-4 pixeltext">
+    <h2 style="padding: 10px; margin: 0;">Chat...</h2>
+    <ul id="chat"></ul>
+    <form id="form">
+        <input id="input" autocomplete="off" placeholder="Scrivi un messaggio..." />
+        <button>Invia</button>
+    </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const chat = document.getElementById('chat');
+        const form = document.getElementById('form');
+        const input = document.getElementById('input');
+
+        const nickname = "Utente" + Math.floor(Math.random() * 1000);
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (input.value) {
+                socket.emit('message', { nick: nickname, text: input.value });
+                input.value = '';
+            }
+        });
+
+        socket.on('message', (data) => {
+            const item = document.createElement('li');
+            item.textContent = `${ data.nick }: ${ data.text }`;
+            chat.appendChild(item);
+            chat.scrollTop = chat.scrollHeight;
+        });
+    </script>
+</body>
+
+</html>
