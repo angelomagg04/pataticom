@@ -9,6 +9,7 @@ window.aggiornaPunteggi = function() {
         });
         personaggio.pt = punteggioTotale;
     });
+    data.ang.pt += 50;
 };
 
 //bonus e malus
@@ -66,7 +67,7 @@ if (data[nome]) {
     // Calcola il punteggio totale sommando i punteggi delle sfide completate
     const tutteLeSfide = [...bonus, ...malus];
     const completate = data[nome].sfideCompletate || [];
-    let punteggioTotale = 0;
+    let punteggioTotale = data[nome].pt;
     completate.forEach(id => {
         const sfida = tutteLeSfide.find(item => item.id === id);
         if (sfida) punteggioTotale += sfida.punteggio;
@@ -136,6 +137,6 @@ if (data[nome]) {
 
 if (window.innerWidth >= 992) {
     // Ad esempio, reindirizza a una pagina desktop
-    window.location.href = "desktop.html";
+    window.location.href = "classifica.html";
 }
 
