@@ -47,11 +47,11 @@ const malus = [
 // Dati dei personaggi
 const data = {
     ang: { img: "avatars/avatar.png", nome: "ang", pt: 50, sfideCompletate: [6,0,1] },
-    bisi: { img: "avatars/bisi.png", nome: "bisi", pt: 0, sfideCompletate: [1] },
+    bisi: { img: "avatars/bisi.png", nome: "bisi", pt: 0, sfideCompletate: [1,2] },
     gab: { img: "avatars/gab.png", nome: "gab", pt: 0, sfideCompletate: [6,0,1] },
-    zacca: { img: "avatars/zacca.png", nome: "zacca", pt: 0, sfideCompletate: [6,1,0] },
-    mamu: { img: "avatars/mamu.png", nome: "mamu", pt: 0, sfideCompletate: [1,8] },
-    tolo: { img: "avatars/tolo.png", nome: "tolo", pt: 0, sfideCompletate: [] },
+    zacca: { img: "avatars/zacca.png", nome: "zacca", pt: 0, sfideCompletate: [6,1,0,8,2] },
+    mamu: { img: "avatars/mamu.png", nome: "mamu", pt: 0, sfideCompletate: [1,8,2] },
+    tolo: { img: "avatars/tolo.png", nome: "tolo", pt: 0, sfideCompletate: [2] },
 };
 
 // Prendi parametro dall'URL
