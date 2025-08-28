@@ -46,7 +46,7 @@ const malus = [
 
 // Dati dei personaggi
 const data = {
-    ang: { img: "avatars/avatar.png", nome: "ang", pt: 50, sfideCompletate: [6,0,1] },
+    ang: { img: "avatars/avatar.png", nome: "ang", pt: 50, sfideCompletate: [6,0,1,7] },
     bisi: { img: "avatars/bisi.png", nome: "bisi", pt: 0, sfideCompletate: [1,2,0,4] },
     gab: { img: "avatars/gab.png", nome: "gab", pt: 0, sfideCompletate: [6,0,1] },
     zacca: { img: "avatars/zacca.png", nome: "zacca", pt: 0, sfideCompletate: [6,1,0,8,2] },
