@@ -10,6 +10,7 @@ window.aggiornaPunteggi = function() {
         personaggio.pt = punteggioTotale;
     });
     data.ang.pt += 50;
+    data.zacca.pt += 20;
 };
 
 //bonus e malus
@@ -49,7 +50,7 @@ const data = {
     ang: { img: "avatars/avatar.png", nome: "ang", pt: 50, sfideCompletate: [6,0,1,7] },
     bisi: { img: "avatars/bisi.png", nome: "bisi", pt: 0, sfideCompletate: [1,2,0,4,6] },
     gab: { img: "avatars/gab.png", nome: "gab", pt: 0, sfideCompletate: [6,0,1] },
-    zacca: { img: "avatars/zacca.png", nome: "zacca", pt: 0, sfideCompletate: [6,1,0,8,2,7] },
+    zacca: { img: "avatars/zacca.png", nome: "zacca", pt: 20, sfideCompletate: [6,1,0,8,2,7] },
     mamu: { img: "avatars/mamu.png", nome: "mamu", pt: 0, sfideCompletate: [1,8,2,7] },
     tolo: { img: "avatars/tolo.png", nome: "tolo", pt: 0, sfideCompletate: [2,1] },
 };
